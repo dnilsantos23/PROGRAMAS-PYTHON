@@ -74,7 +74,8 @@ def main():
 
 def mostrar_nomes():
    print("Nome: %s\nSobrenome: %s" % (e1.get(), e2.get()))
-janela = tk.Tk()
+janela
+tk.Tk()
 janela.title("Aplicação GUI com o Widget Entry")
 tk.Label(janela,text="Nome").grid(row=0)
 
@@ -86,6 +87,13 @@ e2.grid(row=1, column=1)
 tk.Button(janela, text='Sair',command=janela.quit).grid(row=3,column=0,sticky=tk.W,pady=4)
 tk.Button(janela, text='Exibir Dados', command=mostrar_nomes).grid(row=3,column=1,sticky=tk.W,pady=4)
 tk.mainloop()
+
+janela = tk.Tk()
+v = tk.IntVar()
+tk.Label(janela,text="""Escolha uma linguagem de programação:""",justify = tk.LEFT, padx = 20).pack()
+tk.Radiobutton(janela,text="python",padx = 25,variable=v,value=1).pack(anchor=tk.W)
+tk.Radiobutton(janela,text="C++",padx = 25,variable=v,value=2).pack(anchor=tk.W)
+janela.mainloop()
     
 if __name__ == "__main__":
     main()
